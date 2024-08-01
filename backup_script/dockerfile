@@ -1,0 +1,11 @@
+FROM ubuntu
+
+WORKDIR /script/backup
+
+RUN apt update && apt install -y \
+    python3 \
+    bash 
+
+COPY . .
+
+CMD ["./script.sh"]

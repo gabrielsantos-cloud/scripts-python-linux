@@ -1,0 +1,13 @@
+FROM ubuntu
+
+WORKDIR /script/gerenciamento
+
+RUN apt update && apt install -y \
+    python3 \
+    nginx \
+    curl \
+    bash 
+
+COPY . .
+
+CMD ["python3", "cpu.py"]
